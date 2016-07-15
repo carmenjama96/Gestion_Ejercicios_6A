@@ -10,7 +10,9 @@ public class Ejercicios_Gestion_I {
                           +"  Autores: Guerrero Ketter, Jama Carmen, Lazaro Johanna.\n"
                           + "            BIENVENIDO ESCOJA UNA OPCION \n"
                           + "--------------------------------------------------------\n"
-                + "1. Calcular el area y perimetro de un triangulo rectangulo\n");
+                + "1. Calcular el area y perimetro de un triangulo rectangulo\n"
+                + "2. Calcular: consumo de gasolina por cada km y 100km,"
+                + "\n   velocidad media. De acuerdo a datos de un viaje");
         System.out.print("Opcion: ");
         valor_entrada =entrada.next();
         evaluar_opcion(valor_entrada);
@@ -21,6 +23,10 @@ public class Ejercicios_Gestion_I {
             case "1":
                 A_AreaPerimetroTriganguloRectangulo ejercicio_1= new A_AreaPerimetroTriganguloRectangulo();
                 ejercicio_1.entrada_datos();
+                break;
+            case "2":
+                B_Calculo_Datos_Viaje ejercicio_2= new B_Calculo_Datos_Viaje();
+                //ejercicio_2.entrada_datos();
                 break;
             default:
                 System.out.print("Opcion no valida, ¿Desea intentarlo de nuevo? (SI/NO): ");
