@@ -1,18 +1,17 @@
 package ejercicios_gestioncalidad;
 import java.util.Scanner;
 
-public class Ejercicios_Gestion_I {
+public class Ejecucion {
     Scanner entrada = new Scanner (System.in);
     String valor_entrada;
     
     public void entrada_opcion(){
-    System.out.println ("--------------------------------------------------------\n"
-                          +"  Autores: Guerrero Ketter, Jama Carmen, Lazaro Johanna.\n"
-                          + "            BIENVENIDO ESCOJA UNA OPCION \n"
-                          + "--------------------------------------------------------\n"
+    System.out.println ("----------------------------------------------------------------------------\n"
+                          +"         Autores: Guerrero Ketter, Jama Carmen, Lazaro Johanna.\n"
+                          + "                   BIENVENIDO ESCOJA UNA OPCION \n"
+                          + "----------------------------------------------------------------------------\n"
                 + "1. Calcular el area y perimetro de un triangulo rectangulo\n"
-                + "2. Calcular: consumo de gasolina por cada km y 100km,"
-                + "\n   velocidad media. De acuerdo a datos de un viaje");
+                + "2. Calcular: consumo de gasolina por cada km y 100km, velodidad media");
         System.out.print("Opcion: ");
         valor_entrada =entrada.next();
         evaluar_opcion(valor_entrada);
@@ -40,7 +39,7 @@ public class Ejercicios_Gestion_I {
         }
     }
     public static void main(String[] args) {
-        Ejercicios_Gestion_I ejecucion = new Ejercicios_Gestion_I();
+        Ejecucion ejecucion = new Ejecucion();
         ejecucion.entrada_opcion();
         A_AreaPerimetroTriganguloRectangulo ejercicio_1= new A_AreaPerimetroTriganguloRectangulo();
         ejercicio_1.entrada_datos();

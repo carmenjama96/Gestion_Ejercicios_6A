@@ -12,8 +12,8 @@ public class A_AreaPerimetroTriganguloRectangulo {
     
     //Ingreso de datos
     public void entrada_datos (){
-        System.out.println ("--------------------------------------------------------\n"
-                           +"--------------------------------------------------------\n"
+        System.out.println ("----------------------------------------------------------------------------\n"
+                           +"----------------------------------------------------------------------------\n"
                            +"      Area y perimetro de un triangulo rectangulo\n");
         System.out.print("Ingrese valor de altura: ");
         valor_entrada=entrada.nextLine().replaceAll("\\s", "");

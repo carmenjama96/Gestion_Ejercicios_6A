@@ -19,7 +19,7 @@ public class Validaciones {
         valor_entrada =entrada.next();
         if(valor_entrada.equals("SI")||valor_entrada.equals("si")||valor_entrada.equals("Si")){
             System.out.print("\n\n\n\n\n\n");
-            Ejercicios_Gestion_I ejecucion = new Ejercicios_Gestion_I();
+            Ejecucion ejecucion = new Ejecucion();
             ejecucion.entrada_opcion();
         }else{
             System.exit(0);
