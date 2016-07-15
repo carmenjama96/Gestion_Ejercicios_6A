@@ -8,7 +8,7 @@ public class Validaciones {
     String valor_entrada;
     
     public boolean validar_solo_numeros(String datos){
-        if(datos.matches("-+[0-9]+.[0-9]*")){
+        if(datos.matches("[0-9]+.[0-9]*")){
             return true;
         }else{
             return false;
