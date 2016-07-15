@@ -1,5 +1,5 @@
 
-package ejericios_gestion_i;
+package ejercicios_gestioncalidad;
 
 public class Validaciones {
     public boolean validar_solo_numeros(String datos){

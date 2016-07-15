@@ -1,4 +1,4 @@
-package ejericios_gestion_i;
+package ejercicios_gestioncalidad;
 import java.util.Scanner;
 
 public class Ejercicios_Gestion_I {
