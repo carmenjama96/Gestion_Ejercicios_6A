@@ -34,8 +34,8 @@ public class A_AreaPerimetroTriganguloRectangulo {
         //Si por el contrario el dato ingresado no cumple con los parametros requeridos,
         //debera de ingresarse de nuevo el valor y se vuelve a llamar el metodo para validar.
         }else{
-            System.out.print ("\n--Error en dato, vuelva a intentarlo");
-            System.out.print ("Ingrese valor de "+tipo+": ");
+            System.out.print ("--Error en dato, vuelva a intentarlo");
+            System.out.print ("\nIngrese valor de "+tipo+": ");
             valor_entrada=entrada.nextLine().replaceAll("\\s", "");
             validar_datos(valor_entrada, tipo);
         }

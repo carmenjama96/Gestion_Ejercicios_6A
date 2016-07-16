@@ -50,7 +50,7 @@ public class A_Calculo_Datos_Viaje {
                 asignacion_valores(valor, tipo);
             }else{
                 //Si el dato no es correcto se ingresa y valida de nuevo, llamando a este mismo metodo
-                System.out.print ("\n--Error en dato, intentelo de nuevo\n");
+                System.out.print ("--Error en dato, intentelo de nuevo\n");
                 System.out.print (tipo+": ");
                 valor_entrada=entrada.nextLine().replaceAll("\\s", "");
                 validar_datos(valor_entrada, tipo);
@@ -61,7 +61,7 @@ public class A_Calculo_Datos_Viaje {
                 asignacion_valores(valor, tipo);
             }else{
                 //Si el dato no es correcto se ingresa y valida de nuevo, llamando a este mismo metodo
-                System.out.print ("\n--Error en dato, intentelo de nuevo\n");
+                System.out.print ("--Error en dato, intentelo de nuevo\n");
                 System.out.print (tipo+": ");
                 valor_entrada=entrada.nextLine().replaceAll("\\s", "");
                 validar_datos(valor_entrada, tipo);
@@ -79,7 +79,7 @@ public class A_Calculo_Datos_Viaje {
             }
         }else{
             //Si el dato no es correcto se vuelve a ingresar y volvemos a llamar a este metodo.
-            System.out.print ("\n--Error en dato, intentelo de nuevo\n");
+            System.out.print ("--Error en dato, intentelo de nuevo\n");
             System.out.print ("Tiempo tartado/"+tipo+": ");
             valor_entrada=entrada.nextLine().replaceAll("\\s", "");
             validar_tiempo(valor_entrada, tipo);
