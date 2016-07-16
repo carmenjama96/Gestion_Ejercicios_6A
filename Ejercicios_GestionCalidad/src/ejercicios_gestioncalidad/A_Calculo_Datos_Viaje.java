@@ -57,7 +57,7 @@ public class A_Calculo_Datos_Viaje {
             }
         }else{
             //Si se ingresa dinero se valida que el dato sea numerico, positivo y con el formato correcto
-            if(validaciones.validar_modena(valor_entrada)==true){
+            if(validaciones.validar_modena(valor)==true){
                 asignacion_valores(valor, tipo);
             }else{
                 //Si el dato no es correcto se ingresa y valida de nuevo, llamando a este mismo metodo

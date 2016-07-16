@@ -40,7 +40,7 @@ public class Validaciones {
     }
     
     public boolean validar_modena(String datos){
-        if(valor_entrada.matches("^[0-9]{1,3}([0-9]{3})*[\\\\.][0-9]{2}$")){
+        if(datos.matches("^[0-9]{1,3}([0-9]{3})*[\\\\.][0-9]{2}$")){
             return validar_solo_numeros_positivos(datos);
         }else{
             return false;
