@@ -25,4 +25,25 @@ public class Validaciones {
             System.exit(0);
         }
     }
+    
+    public boolean validar_solo_numeros_positivos(String datos){
+        if(validar_solo_numeros(datos)==true){
+            Double numero =Double.parseDouble(datos);
+            if(numero>0){
+                return true;
+            }else{
+                return false;
+            }
+        }else{
+            return false;
+        }
+    }
+    
+    public boolean validar_modena(String datos){
+        if(valor_entrada.matches("^[0-9]{1,3}([0-9]{3})*[\\\\.][0-9]{2}$")){
+            return validar_solo_numeros_positivos(datos);
+        }else{
+            return false;
+        }
+    }
 }

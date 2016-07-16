@@ -6,10 +6,10 @@ public class Ejecucion {
     String valor_entrada;
     
     public void entrada_opcion(){
-    System.out.println ("----------------------------------------------------------------------------\n"
+    System.out.println ("--------------------------------------------------------------------------------\n"
                           +"         Autores: Guerrero Ketter, Jama Carmen, Lazaro Johanna.\n"
                           + "                   BIENVENIDO ESCOJA UNA OPCION \n"
-                          + "----------------------------------------------------------------------------\n"
+                          + "--------------------------------------------------------------------------------\n"
                 + "1. Calcular el area y perimetro de un triangulo rectangulo\n"
                 + "2. Calcular: consumo de gasolina por cada km y 100km, velodidad media");
         System.out.print("Opcion: ");
@@ -24,8 +24,8 @@ public class Ejecucion {
                 ejercicio_1.entrada_datos();
                 break;
             case "2":
-                B_Calculo_Datos_Viaje ejercicio_2= new B_Calculo_Datos_Viaje();
-                //ejercicio_2.entrada_datos();
+                A_Calculo_Datos_Viaje ejercicio_2= new A_Calculo_Datos_Viaje();
+                ejercicio_2.ingreso_datos();
                 break;
             default:
                 System.out.print("Opcion no valida, ¿Desea intentarlo de nuevo? (SI/NO): ");
@@ -41,7 +41,7 @@ public class Ejecucion {
     public static void main(String[] args) {
         Ejecucion ejecucion = new Ejecucion();
         ejecucion.entrada_opcion();
-        A_AreaPerimetroTriganguloRectangulo ejercicio_1= new A_AreaPerimetroTriganguloRectangulo();
-        ejercicio_1.entrada_datos();
+        //A_Calculo_Datos_Viaje ejecucion2 = new A_Calculo_Datos_Viaje();
+        //ejecucion2.ingreso_datos();
     }
 }
