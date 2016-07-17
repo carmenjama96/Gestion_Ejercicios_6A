@@ -40,6 +40,7 @@ public class A_TrianguloNFilas {
     
     public void generar_triangulo(int valor){
         crear_arreglo(valor);
+        System.out.print ("Respuesta:\n\n");
         for(int i=0; i<valor+1; i++){
             cadena[i]="  ";
             for(int j=i+1; j<(cadena.length-i); j++){
@@ -47,6 +48,8 @@ public class A_TrianguloNFilas {
             }
             imprimir_arreglo(valor-i);
         }
+        System.out.print ("--------------------------------------------------------------------------------\n");
+        validaciones.regresar_inicio();
     }
     
     public void crear_arreglo(int valor){
@@ -62,4 +65,5 @@ public class A_TrianguloNFilas {
         }
         System.out.print (mostrar+"\n");
     }
+    
 }
