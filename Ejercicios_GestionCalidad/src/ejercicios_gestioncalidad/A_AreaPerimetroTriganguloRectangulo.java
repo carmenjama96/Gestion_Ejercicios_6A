@@ -1,8 +1,9 @@
 package ejercicios_gestioncalidad;
+
 import java.text.DecimalFormat;
 import java.util.Scanner;
 
-//Ejercicio: Diseñar un programa que calcule el área y el perímetro de un triángulo rectángulo dada la base y la altura.
+/*Ejercicio: Diseñar un programa que calcule el área y el perímetro de un triángulo rectángulo dada la base y la altura.*/
 
 public class A_AreaPerimetroTriganguloRectangulo {
     //Declaramos las variables a utilizar

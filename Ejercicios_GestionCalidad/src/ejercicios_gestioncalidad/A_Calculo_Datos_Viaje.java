@@ -1,13 +1,12 @@
-
 package ejercicios_gestioncalidad;
 
 import java.text.DecimalFormat;
 import java.util.Scanner;
-//Ejercicio 8: Diseñar un programa que ingrese el total de kilómetros recorridos, el precio de la gasolina (por litro), 
-//el dinero de gasolina gastado en el viaje y el tiempo que se ha tardado (en horas y minutos) y que calcule y muestre:
-//  • Consumo de gasolina (en litros y dólares) por cada 100 km.
-//  • Consumo de gasolina (en litros y dólares) por cada km.
-//  • Velocidad media (en km/h y m/s).
+/*Ejercicio 8: Diseñar un programa que ingrese el total de kilómetros recorridos, el precio de la gasolina (por litro), 
+  el dinero de gasolina gastado en el viaje y el tiempo que se ha tardado (en horas y minutos) y que calcule y muestre:
+   • Consumo de gasolina (en litros y dólares) por cada 100 km.
+   • Consumo de gasolina (en litros y dólares) por cada km.
+   • Velocidad media (en km/h y m/s).*/
 
 public class A_Calculo_Datos_Viaje {
     String valor_entrada;
@@ -61,7 +60,7 @@ public class A_Calculo_Datos_Viaje {
                 asignacion_valores(valor, tipo);
             }else{
                 //Si el dato no es correcto se ingresa y valida de nuevo, llamando a este mismo metodo
-                System.out.print ("--Error en dato, intentelo de nuevo\n");
+                System.out.print ("--Error, intentelo de nuevo (Siga este formato -> 00.00)\n");
                 System.out.print (tipo+": ");
                 valor_entrada=entrada.nextLine().replaceAll("\\s", "");
                 validar_datos(valor_entrada, tipo);
@@ -105,7 +104,7 @@ public class A_Calculo_Datos_Viaje {
         gasolina_litros_km=(gasolina_consumida/prec_gasolina)/kilometros_recorridos;
         //Para calcular el cosumo de gasolina en dolares por kilometro, dividimos el precio consumido por
         //la distanncia recorrida.
-        gasolina_dolares_km=prec_gasolina/kilometros_recorridos;
+        gasolina_dolares_km=gasolina_consumida/kilometros_recorridos;
         //Para los calculos de 100 kilometros utilizamos los valores anteriores que serian en 1km
         //y los multiplicamos para 100.
         gasolina_litros_100km=gasolina_litros_km*100;
@@ -113,7 +112,7 @@ public class A_Calculo_Datos_Viaje {
         //La velocidad media es igual a distancia_recorrida/tiempo
         //Expresada en km/h tendriamos que dividir los kilometros recorridos para la suma de las horas y el total
         //de horas que hay en los minutos que se ingresaron
-        vel_media_km_h=kilometros_recorridos/(horas+(minutos*(1/60)));
+        vel_media_km_h=kilometros_recorridos/(horas+(minutos*0.0166667));
         //Expresada en m/h tenemos que hacer la respectiva transformacion de los datos.
         vel_media_m_s=(kilometros_recorridos*1000)/((horas*36000)+(minutos*60));
         
