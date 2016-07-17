@@ -19,9 +19,9 @@ public class A_Calculo_Datos_Viaje {
     int horas, minutos;
         
     public void ingreso_datos(){
-        System.out.println ("--------------------------------------------------------------------------------\n"
-                           +"--------------------------------------------------------------------------------\n"
-                           +"Calculo de gasto de gasolina y velocidad media de un viaje. Por favor, responda.\n");
+        System.out.println ("\n--------------------------------------------------------------------------------\n"
+                           +"--------------------------------------------------------------------------------\n\n"
+                           +"Calculo de gasto de gasolina y velocidad media de un viaje. Por favor, responda.");
         //Ingreso de datos
         System.out.print("Kilometros recorridos: ");
         valor_entrada=entrada.nextLine().replaceAll("\\s", "");
@@ -69,19 +69,27 @@ public class A_Calculo_Datos_Viaje {
     }
     
     public void validar_tiempo(String valor, String tipo){
-        //Valida que las horas sean correctas y los minutos no mayores a 0
-        if (valor.matches("[0-9]*")){
-            if(tipo.equals("horas")){
-                horas=Integer.parseInt(valor);
+        //Valida que las horas sean correctas y los minutos esten entre 0 y 60
+        //Si las condiciones se cumplen se asigna el valor de entrada a las vaiables
+        Integer var_tiempo = Integer.parseInt(valor);
+        if(tipo.equals("hora")){
+            if(validaciones.validar_numeros_enteros(valor) && var_tiempo>=0){
+                horas=var_tiempo;
             }else{
-                minutos=Integer.parseInt(valor);
+                System.out.print ("--Error en dato, intentelo de nuevo\n");
+                System.out.print ("Tiempo tartado/"+tipo+": ");
+                valor_entrada=entrada.nextLine().replaceAll("\\s", "");
+                validar_tiempo(valor_entrada, tipo);
             }
         }else{
-            //Si el dato no es correcto se vuelve a ingresar y volvemos a llamar a este metodo.
-            System.out.print ("--Error en dato, intentelo de nuevo\n");
-            System.out.print ("Tiempo tartado/"+tipo+": ");
-            valor_entrada=entrada.nextLine().replaceAll("\\s", "");
-            validar_tiempo(valor_entrada, tipo);
+            if(validaciones.validar_numeros_enteros(valor) && var_tiempo>0 && var_tiempo<60){
+                minutos=var_tiempo;
+            }else{
+                System.out.print ("--Error en dato, intentelo de nuevo\n");
+                System.out.print ("Tiempo tartado/"+tipo+": ");
+                valor_entrada=entrada.nextLine().replaceAll("\\s", "");
+                validar_tiempo(valor_entrada, tipo);
+            }
         }
     }
     
@@ -118,9 +126,10 @@ public class A_Calculo_Datos_Viaje {
         
         //Se muestra la respuesta y su rexpectiva explicacion.
         System.out.print ("Respuesta:\n"
-                + " Consumo de gasolina por kilometro: "+decimales.format(gasolina_litros_km)+" en litros y "+decimales.format(gasolina_dolares_km)+" en dinero."
-                + "\n Consumo de gasolina por 100km: "+decimales.format(gasolina_litros_100km)+" en litros y "+decimales.format(gasolina_dolares_100km)+" en dinero."
-                + "\n La velocidad media es de: "+decimales.format(vel_media_km_h)+" en km/h y "+decimales.format(vel_media_m_s)+" en m/s");
+                + "   Consumo de gasolina por kilometro: "+decimales.format(gasolina_litros_km)+" en litros y "+decimales.format(gasolina_dolares_km)+" en dinero."
+                + "\n   Consumo de gasolina por 100km: "+decimales.format(gasolina_litros_100km)+" en litros y "+decimales.format(gasolina_dolares_100km)+" en dinero."
+                + "\n   La velocidad media es de: "+decimales.format(vel_media_km_h)+" en km/h y "+decimales.format(vel_media_m_s)+" en m/s"
+                +"\n--------------------------------------------------------------------------------\n");
         validaciones.regresar_inicio();
     }
 }

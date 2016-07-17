@@ -16,9 +16,9 @@ public class A_AreaPerimetroTriganguloRectangulo {
     
     //Ingreso de datos
     public void entrada_datos (){
-        System.out.println ("--------------------------------------------------------------------------------\n"
-                           +"--------------------------------------------------------------------------------\n"
-                           +"      Area y perimetro de un triangulo rectangulo\n");
+        System.out.println ("\n--------------------------------------------------------------------------------\n"
+                           +"--------------------------------------------------------------------------------\n\n"
+                           +"                 Area y perimetro de un triangulo rectangulo");
         System.out.print("Ingrese valor de altura: ");
         valor_entrada=entrada.nextLine().replaceAll("\\s", "");
         validar_datos(valor_entrada, "altura"); //Este metodo valida que los datos ingresados esten correctos (tipo numerico)
@@ -57,8 +57,9 @@ public class A_AreaPerimetroTriganguloRectangulo {
         perimetro=altura+base+hipotenusa;
         //Se muestra la respuesta y su rexpectiva explicacion.
         System.out.print ("Respuesta:\n"
-                + "El area del rectangulo es "+decimales.format(area)+"; el perimetro del triangulo es "+decimales.format(perimetro)+"."
-                +"\nPara los valores de altura "+decimales.format(altura)+"; base "+decimales.format(base)+"\n");
+                + "   El area del rectangulo es "+decimales.format(area)+"; el perimetro del triangulo es "+decimales.format(perimetro)+"."
+                +"\n   Para los valores de altura "+decimales.format(altura)+"; base "+decimales.format(base)+"\n"
+                +"--------------------------------------------------------------------------------\n");
         //Llamamos a un metodo externo que nos permitira segun lo que responda el usuario volver o no al menu de inicio.
         validaciones.regresar_inicio();
     }
