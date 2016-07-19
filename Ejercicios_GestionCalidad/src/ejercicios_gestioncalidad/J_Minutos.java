@@ -1,5 +1,7 @@
 package ejercicios_gestioncalidad;
 
+import static ejercicios_gestioncalidad.ejercicio2.validaciones;
+import java.io.IOException;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -15,7 +17,7 @@ import java.util.regex.Pattern;
  */
 public class J_Minutos {
 
-    public void minutos() {
+    public void minutos() throws IOException{
         Scanner sc = new Scanner(System.in);
         int stado;
         int num, dias, hor, min;
@@ -32,6 +34,7 @@ public class J_Minutos {
                 System.out.println(dias + " dias " + hor + " h " + min + " m");
             }
         } while (stado != 0);
+        validaciones.regresar_inicio();
 
     }
 

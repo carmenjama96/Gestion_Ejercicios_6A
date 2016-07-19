@@ -1,4 +1,7 @@
+package ejercicios_gestioncalidad;
 
+import static ejercicios_gestioncalidad.ejercicio2.validaciones;
+import java.io.IOException;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -14,7 +17,7 @@ import java.util.regex.Pattern;
  */
 public class J_Formula {
 
-    public static void formula() {
+    public void formula() throws IOException{
         Scanner sc = new Scanner(System.in);
         int stado, cantidad;
         do {
@@ -36,6 +39,7 @@ public class J_Formula {
             }
 
         } while (stado != 0);
+        validaciones.regresar_inicio();
 
     }
 

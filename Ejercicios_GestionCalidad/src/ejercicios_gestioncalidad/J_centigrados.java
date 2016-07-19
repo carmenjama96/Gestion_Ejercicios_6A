@@ -1,4 +1,6 @@
+package ejercicios_gestioncalidad;
 
+import static ejercicios_gestioncalidad.ejercicio2.validaciones;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -16,7 +18,7 @@ import java.util.regex.Pattern;
  */
 public class J_centigrados {
 
-    public static void centigrados() throws IOException {
+    public void centigrados() throws IOException {
         BufferedReader in;
         in = new BufferedReader(new InputStreamReader(System.in));
         double n, f, c;
@@ -50,6 +52,7 @@ public class J_centigrados {
                         break;
                 }
             } while (stado != 0);
+            validaciones.regresar_inicio();
         }
 
     }

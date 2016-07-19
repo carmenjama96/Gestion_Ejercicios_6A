@@ -1,4 +1,7 @@
+package ejercicios_gestioncalidad;
 
+import static ejercicios_gestioncalidad.ejercicio2.validaciones;
+import java.io.IOException;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -14,7 +17,7 @@ import java.util.regex.Pattern;
  */
 public class J_horasTrabajadas {
 
-    public static void horastra() {
+    public void horastra() throws IOException{
         String horas;
         String tarifa;
         int horasextra;
@@ -50,6 +53,7 @@ public class J_horasTrabajadas {
                 }
             }
         } while (stado != 0 | stado2 != 0);
+        validaciones.regresar_inicio();
     }
 
     private static int validar(String valor) {

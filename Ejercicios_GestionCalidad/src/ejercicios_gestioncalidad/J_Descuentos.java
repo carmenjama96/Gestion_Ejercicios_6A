@@ -1,4 +1,7 @@
+package ejercicios_gestioncalidad;
 
+import static ejercicios_gestioncalidad.ejercicio14.validaciones;
+import java.io.IOException;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -14,7 +17,7 @@ import java.util.regex.Pattern;
  */
 public class J_Descuentos {
 
-    public static void descuentos() {
+    public void descuentos()throws IOException {
         Scanner sc = new Scanner(System.in);
         int stado, cantidad;
         double total, descuento;
@@ -47,6 +50,7 @@ public class J_Descuentos {
 
             }
         } while (stado != 0);
+        validaciones.regresar_inicio();
 
     }
 
