@@ -74,6 +74,10 @@ public class J_Ejecucion {
             case "11":
                 A_DepreciacionVehiculo ejercicio_11= new A_DepreciacionVehiculo();
                 ejercicio_11.ingreso_datos();
+            case "12":
+                J_tabla ejercicio_12= new J_tabla();
+                ejercicio_12.tablita();
+                
                 break;
             case "13":
                 ejercicio26.inicioEjercicio26();

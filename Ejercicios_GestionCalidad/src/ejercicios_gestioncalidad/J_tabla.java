@@ -1,3 +1,4 @@
+package ejercicios_gestioncalidad;
 
 import java.util.Scanner;
 import java.util.regex.Matcher;
