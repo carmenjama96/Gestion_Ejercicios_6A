@@ -9,6 +9,7 @@ package ejercicios_gestioncalidad;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.math.RoundingMode;
 import java.text.DecimalFormat;
 
 /**
@@ -17,11 +18,12 @@ import java.text.DecimalFormat;
  */
 public class ejercicio2 {
         public static BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
-    static DecimalFormat decimales = new DecimalFormat("0.000");
+    static DecimalFormat decimales = new DecimalFormat("0.0000");
     static Validaciones validaciones = new Validaciones();
     
     public static void inicioEjercicio2() throws IOException{
         String verificador;
+        decimales.setRoundingMode(RoundingMode.DOWN);
         
         double  distanciaMillaMarina, distanciaMetros, distanciaKilometros;
         
