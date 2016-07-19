@@ -1,3 +1,4 @@
+package ejercicios_gestioncalidad;
 
 import java.util.Scanner;
 import java.util.regex.Matcher;
@@ -14,7 +15,7 @@ import java.util.regex.Pattern;
  */
 public class J_Minutos {
 
-    public static void minutos() {
+    public void minutos() {
         Scanner sc = new Scanner(System.in);
         int stado;
         int num, dias, hor, min;

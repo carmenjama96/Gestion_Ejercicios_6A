@@ -49,6 +49,9 @@ public class J_Ejecucion {
             case "2":
                 A_AreaPerimetroTriganguloRectangulo ejercicio_2= new A_AreaPerimetroTriganguloRectangulo();
                 ejercicio_2.entrada_datos();
+            case "3":
+                J_Minutos ejercicio_3= new J_Minutos();
+                ejercicio_3.minutos();
                 break;
             case "4":
                 A_Calculo_Datos_Viaje ejercicio_4= new A_Calculo_Datos_Viaje();
