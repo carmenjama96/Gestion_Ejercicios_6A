@@ -52,18 +52,26 @@ public class A_DepreciacionVehiculo {
                 }
                 break;
             case "fecha"://Validamos que el a;o ingresado sea corecto
-                if(validaciones.validar_numeros_enteros(valor) && Integer.parseInt(valor)>999){
-                    fecha=Integer.parseInt(valor);
+                if(validaciones.longitud_string(valor)==false){
+                    if(validaciones.validar_numeros_enteros_positivos(valor) && Integer.parseInt(valor)>999){
+                       fecha=Integer.parseInt(valor);
+                    }else{
+                        mensaje_error("Ingrese año de compra: ", tipo);
+                    }
                 }else{
                     mensaje_error("Ingrese año de compra: ", tipo);
                 }
                 break;
             case "tiempo": //Validamos que el total de años que se piden calcular la depreciacion sean correctos, mayores a c y enteros
-                if(validaciones.validar_numeros_enteros(valor) && (Integer.parseInt(valor)>0)){
-                    tiempo=Integer.parseInt(valor);
+                if(validaciones.longitud_string(valor)==false){
+                    if(validaciones.validar_numeros_enteros_positivos(valor) && (Integer.parseInt(valor)>0)){
+                        tiempo=Integer.parseInt(valor);
+                    }else{
+                        mensaje_error("¿Para cuantos años desea calcular la depreciacion?: ", tipo);
+                    }
                 }else{
                     mensaje_error("¿Para cuantos años desea calcular la depreciacion?: ", tipo);
-                }
+                }           
                 break;
         }
     }
@@ -84,15 +92,14 @@ public class A_DepreciacionVehiculo {
         calculo_sumatoria();
         //Mostramos los datos inciales
         System.out.print ("Respuesta:\n"
-                +"   AÑO    ||   DEPRECIACION\n"
-                +"   "+fecha+"   ||     "+valor_inicial+"\n");
+                +"   AÑO    ||   DEPRECIACION\n");
         do{
             fecha=fecha+1;//Se va aumentanndo la fecha, para mostrar el año
             depreciacion_calculo=(tiempo/sumatoria)*valor_inicial;//Las cuotas de depreciación de decrecientes para cada periodo serán igual al producto del valor sujeto a las depreciaciones
                                                                   // por cada una de las fracciones formadas, al dividir el numero de depreciaciones a calcular por lla sumatoria de los digitos.
             System.out.print ("   "+fecha+"   ||     "+decimales.format(depreciacion_calculo)+"\n");//Mostramos por pantalla
             tiempo=tiempo-1;//Se disminuye el tiempo, o el numero de veces que se va a calcular la depreciacion
-        }while(tiempo>0 || depreciacion_calculo==0); //Este ciclo se repite hasta 
+        }while(tiempo<0 || depreciacion_calculo==0); //Este ciclo se repite hasta 
         System.out.print ("--------------------------------------------------------------------------------\n");
         validaciones.regresar_inicio();
     }

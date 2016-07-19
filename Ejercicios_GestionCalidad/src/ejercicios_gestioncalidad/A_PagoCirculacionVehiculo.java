@@ -58,7 +58,7 @@ public class A_PagoCirculacionVehiculo {
     
     public void mostrar_resultados(double valor){
         //Mostramos resultados y preguntamos si se quiere volver al menu inicio
-        System.out.print("El valor a pagar es: "+decimales.format(valor)
+        System.out.print("Respuesta:\nEl valor a pagar es: "+decimales.format(valor)
         +"\n--------------------------------------------------------------------------------\n");
         validaciones.regresar_inicio();
     }

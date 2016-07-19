@@ -7,11 +7,11 @@ public class Ejecucion {
     
     public void entrada_opcion(){
     System.out.println ("--------------------------------------------------------------------------------\n"
-            +"            Autores: Guerrero Ketter, Jama Carmen, Lazaro Johanna.\n"
+            +"            Autores: Guerrero Keter, Jama Carmen, Lazaro Johanna.\n"
             +"                              MENU PRINCIPAL\n"
             + " ------------------------------------------------------------------------------\n"
             + "¦    1. Conversion de distancias                                               ¦\n"
-            + "¦    2. Calcular el area y perimetro de un triangulo rectangulo                ¦\n"
+            + "¦    2. Calcular el area y perimetro de un triangulo rectangulo                ¦\n"//
             + "¦    3. Conversion de tiempo                                                   ¦\n"
             + "¦    4. Calcular consumo de gasolina                                           ¦\n"
             + "¦    5. Valor a pagar por circulacion de vehiculo                              ¦\n"
@@ -67,6 +67,22 @@ public class Ejecucion {
                 A_TrianguloNFilas ejercicio_14= new A_TrianguloNFilas();
                 ejercicio_14.ingreso_datos();
                 break;
+            case "17":
+                A_NumeroPrimo_NoPrimo ejercicio_17= new A_NumeroPrimo_NoPrimo();
+                ejercicio_17.ingreso_datos();
+                break;
+            case "20":
+                A_Formula_1 ejercicio_20= new A_Formula_1();
+                ejercicio_20.ingreso_datos();
+                break;
+            case "23":
+                A_NumeroPerfecto_oNo ejercicio_23= new A_NumeroPerfecto_oNo();
+                ejercicio_23.ingreso_datos();
+                break;
+            case "24":
+                A_5Primeros_Numeros_Perfectos ejercicio_24= new A_5Primeros_Numeros_Perfectos();
+                ejercicio_24.ingreso_datos();
+                break;
             default:
                 System.out.print("Opcion no valida, ¿Desea intentarlo de nuevo? (SI/NO): ");
                 valor_entrada =entrada.next();
@@ -82,7 +98,5 @@ public class Ejecucion {
     public static void main(String[] args) {
         Ejecucion ejecucion = new Ejecucion();
         ejecucion.entrada_opcion();
-        //A_PagoCirculacionVehiculo ejecucion2 = new A_PagoCirculacionVehiculo();
-        //ejecucion2.ingreso_datos();
     }
 }

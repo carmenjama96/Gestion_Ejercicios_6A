@@ -13,6 +13,7 @@ public class A_Calculo_Datos_Viaje {
     Scanner entrada = new Scanner (System.in); //Creación de un objeto Scanner
     Validaciones validaciones = new Validaciones();
     DecimalFormat decimales = new DecimalFormat("0.00"); //Nos permite mostrar por pantalla numeros con el formato dado
+    DecimalFormat decimales2 = new DecimalFormat("0.00000");
     
     double kilometros_recorridos=0, prec_gasolina=0, gasolina_consumida=0, gasolina_litros_100km=0,
             gasolina_dolares_100km=0, gasolina_litros_km=0, gasolina_dolares_km=0, vel_media_km_h=0, vel_media_m_s=0;
@@ -25,13 +26,13 @@ public class A_Calculo_Datos_Viaje {
         //Ingreso de datos
         System.out.print("Kilometros recorridos: ");
         valor_entrada=entrada.nextLine().replaceAll("\\s", "");
-        validar_datos(valor_entrada, "Kilometros recorridos"); //Se invoca al metodo que compueba si los datos ingresados son correctos
+        validar_datos(valor_entrada, "km"); //Se invoca al metodo que compueba si los datos ingresados son correctos
         System.out.print("Precio gasolina por litro: ");
         valor_entrada=entrada.nextLine().replaceAll("\\s", "");
-        validar_datos(valor_entrada, "Precio gasolina por litro");
+        validar_datos(valor_entrada, "pre_gas");
         System.out.print("Dinero gastado en gasolina: ");
         valor_entrada=entrada.nextLine().replaceAll("\\s", "");
-        validar_datos(valor_entrada, "Dinero gastado en gasolina");
+        validar_datos(valor_entrada, "dinero");
         //Ingreso del tiempo tardado
         System.out.print("Tiempo tartado/horas: ");
         valor_entrada=entrada.nextLine().replaceAll("\\s", "");
@@ -44,15 +45,11 @@ public class A_Calculo_Datos_Viaje {
     
     public void validar_datos(String valor, String tipo){
         //Si se ingresan kilometros se valida que el dato sea numerico y positivo
-        if(tipo.equals("Kilometros recorridos")){
+        if(tipo.equals("km")){
             if(validaciones.validar_solo_numeros_positivos(valor_entrada)==true){
                 asignacion_valores(valor, tipo);
             }else{
-                //Si el dato no es correcto se ingresa y valida de nuevo, llamando a este mismo metodo
-                System.out.print ("--Error en dato, intentelo de nuevo\n");
-                System.out.print (tipo+": ");
-                valor_entrada=entrada.nextLine().replaceAll("\\s", "");
-                validar_datos(valor_entrada, tipo);
+                mensaje_error(tipo, "--Error en dato, intentelo de nuevo\n");
             }
         }else{
             //Si se ingresa dinero se valida que el dato sea numerico, positivo y con el formato correcto
@@ -60,10 +57,7 @@ public class A_Calculo_Datos_Viaje {
                 asignacion_valores(valor, tipo);
             }else{
                 //Si el dato no es correcto se ingresa y valida de nuevo, llamando a este mismo metodo
-                System.out.print ("--Error, intentelo de nuevo (Siga este formato -> 00.00)\n");
-                System.out.print (tipo+": ");
-                valor_entrada=entrada.nextLine().replaceAll("\\s", "");
-                validar_datos(valor_entrada, tipo);
+                mensaje_error(tipo, "--Error, intentelo de nuevo (Siga este formato -> 00.00)\n");
             }
         }
     }
@@ -71,33 +65,62 @@ public class A_Calculo_Datos_Viaje {
     public void validar_tiempo(String valor, String tipo){
         //Valida que las horas sean correctas y los minutos esten entre 0 y 60
         //Si las condiciones se cumplen se asigna el valor de entrada a las vaiables
-        Integer var_tiempo = Integer.parseInt(valor);
-        if(tipo.equals("hora")){
-            if(validaciones.validar_numeros_enteros(valor) && var_tiempo>=0){
-                horas=var_tiempo;
+        if(validaciones.longitud_string(valor)==false){
+            if(validaciones.validar_numeros_enteros_positivos(valor)==true){
+                Double var_tiempo=Double.parseDouble(valor);
+                if(tipo.equals("horas")&& (var_tiempo>=0)){
+                    horas=Integer.parseInt(valor);
+                }else{
+                    if((var_tiempo>0) && (var_tiempo<=60)){
+                        minutos=Integer.parseInt(valor);
+                    }else{
+                        mensaje_error(tipo, "--Error en dato, los minutos deben de estar en el rango de [0-60]\n");
+                    }
+                }
             }else{
-                System.out.print ("--Error en dato, intentelo de nuevo\n");
-                System.out.print ("Tiempo tartado/"+tipo+": ");
-                valor_entrada=entrada.nextLine().replaceAll("\\s", "");
-                validar_tiempo(valor_entrada, tipo);
+                mensaje_error(tipo, "--Error en dato, intentelo de nuevo\n");
             }
         }else{
-            if(validaciones.validar_numeros_enteros(valor) && var_tiempo>0 && var_tiempo<60){
-                minutos=var_tiempo;
-            }else{
-                System.out.print ("--Error en dato, intentelo de nuevo\n");
-                System.out.print ("Tiempo tartado/"+tipo+": ");
+            mensaje_error(tipo, "--Error en dato, debe de estar en el rango de [0-999999999]\n");
+        }
+    }
+    
+    public void mensaje_error(String tipo, String mensaje){
+        System.out.print(mensaje);
+        switch (tipo) {
+            case "km":
+                System.out.print("Kilometros recorridos: ");
                 valor_entrada=entrada.nextLine().replaceAll("\\s", "");
-                validar_tiempo(valor_entrada, tipo);
-            }
+                validar_datos(valor_entrada, "km");
+                break;
+            case "pre_gas":
+                System.out.print("Precio gasolina por litro: ");
+                valor_entrada=entrada.nextLine().replaceAll("\\s", "");
+                validar_datos(valor_entrada, "pre_gas");
+                break;
+            case "dinero":
+                System.out.print("Dinero gastado en gasolina: ");
+                valor_entrada=entrada.nextLine().replaceAll("\\s", "");
+                validar_datos(valor_entrada, "dinero");
+                break;
+            case "horas":
+                System.out.print("Tiempo tartado/horas: ");
+                valor_entrada=entrada.nextLine().replaceAll("\\s", "");
+                validar_tiempo(valor_entrada, "horas");
+                break;
+            case "minutos":
+                System.out.print("Tiempo tartado/minutos: ");
+                valor_entrada=entrada.nextLine().replaceAll("\\s", "");
+                validar_tiempo(valor_entrada, "minutos");
+                break;
         }
     }
     
     public void asignacion_valores(String valor, String tipo){
-        if(tipo.equals("Kilometros recorridos")){
+        if(tipo.equals("km")){
             kilometros_recorridos= Double.parseDouble(valor);
         }else{
-            if(tipo.equals("Precio gasolina por litro")){
+            if(tipo.equals("pre_gas")){
                 prec_gasolina= Double.parseDouble(valor);
             }else{
                 gasolina_consumida= Double.parseDouble(valor);
@@ -122,13 +145,13 @@ public class A_Calculo_Datos_Viaje {
         //de horas que hay en los minutos que se ingresaron
         vel_media_km_h=kilometros_recorridos/(horas+(minutos*0.0166667));
         //Expresada en m/h tenemos que hacer la respectiva transformacion de los datos.
-        vel_media_m_s=(kilometros_recorridos*1000)/((horas*36000)+(minutos*60));
+        vel_media_m_s=(vel_media_km_h*1000)/3600;
         
         //Se muestra la respuesta y su rexpectiva explicacion.
         System.out.print ("Respuesta:\n"
-                + "   Consumo de gasolina por kilometro: "+decimales.format(gasolina_litros_km)+" en litros y "+decimales.format(gasolina_dolares_km)+" en dinero."
-                + "\n   Consumo de gasolina por 100km: "+decimales.format(gasolina_litros_100km)+" en litros y "+decimales.format(gasolina_dolares_100km)+" en dinero."
-                + "\n   La velocidad media es de: "+decimales.format(vel_media_km_h)+" en km/h y "+decimales.format(vel_media_m_s)+" en m/s"
+                + "   Consumo de gasolina por kilometro: "+decimales2.format(gasolina_litros_km)+" en litros y "+decimales.format(gasolina_dolares_km)+" en dinero."
+                + "\n   Consumo de gasolina por 100km: "+decimales2.format(gasolina_litros_100km)+" en litros y "+decimales.format(gasolina_dolares_100km)+" en dinero."
+                + "\n   La velocidad media es de: "+decimales2.format(vel_media_km_h)+" en km/h y "+decimales2.format(vel_media_m_s)+" en m/s"
                 +"\n--------------------------------------------------------------------------------\n");
         validaciones.regresar_inicio();
     }

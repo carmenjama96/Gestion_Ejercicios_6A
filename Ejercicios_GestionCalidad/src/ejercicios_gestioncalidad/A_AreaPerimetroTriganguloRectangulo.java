@@ -30,7 +30,7 @@ public class A_AreaPerimetroTriganguloRectangulo {
     
     public void validar_datos(String valor, String tipo){
         //Si el valor es correcto lo guarda en altura o base, segun corresponda
-        if(validaciones.validar_solo_numeros(valor)==true){
+        if(validaciones.validar_solo_numeros_positivos(valor)==true){
             asignacion_valores(valor, tipo);
         //Si por el contrario el dato ingresado no cumple con los parametros requeridos,
         //debera de ingresarse de nuevo el valor y se vuelve a llamar el metodo para validar.
