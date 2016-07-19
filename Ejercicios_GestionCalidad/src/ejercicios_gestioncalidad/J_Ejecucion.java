@@ -52,11 +52,7 @@ public class J_Ejecucion {
             case "3":
                 J_Minutos ejercicio_3= new J_Minutos();
                 ejercicio_3.minutos();
-                break;
-            case "3":
-                J_Minutos ejercicio_3= new J_Minutos();
-                ejercicio_3.minutos();
-                break;            
+                break;                    
             case "4":
                 A_Calculo_Datos_Viaje ejercicio_4= new A_Calculo_Datos_Viaje();
                 ejercicio_4.ingreso_datos();
