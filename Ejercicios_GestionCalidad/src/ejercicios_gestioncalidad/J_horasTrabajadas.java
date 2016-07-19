@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
  *
  * @author Johanna lazaro
  */
-public class horasTrabajadas {
+public class J_horasTrabajadas {
 
     public static void main(String[] args) {
         String horas;

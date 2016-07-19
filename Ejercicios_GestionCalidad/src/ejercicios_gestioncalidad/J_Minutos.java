@@ -12,29 +12,23 @@ import java.util.regex.Pattern;
  *
  * @author Johanna lazaro
  */
-public class tabla {
+public class J_Minutos {
 
     public static void main(String[] args) {
-
         Scanner sc = new Scanner(System.in);
         int stado;
-        do {
-            System.out.println("Ingrese Un numero");
+        int num, dias, hor, min;
 
+        do {
+            System.out.println("Ingrese los minutos, ¡Sólo números!");
             String valor = sc.nextLine();
             stado = validar(valor);
             if (stado == 0) {
-                int num = Integer.parseInt(valor);
-
-                System.out.println("**************************************************");
-
-                for (int i = 0; i <= num; i++) {
-                    System.out.println("*    \t" + i + "        \t" + Math.pow(i, 2) + "     \t" + Math.pow(i, 3) + "  \t *");
-
-                }
-
-                System.out.println("**************************************************");
-
+                num = Integer.parseInt(valor);
+                dias = num / 1440;
+                hor = num / 60;
+                min = (num - (60 * hor));
+                System.out.println(dias + " dias " + hor + " h " + min + " m");
             }
         } while (stado != 0);
 
@@ -47,8 +41,9 @@ public class tabla {
         if (mat.matches()) {
             return 0;
         } else {
-            return 1;
+           return 1;
 
         }
+
     }
 }

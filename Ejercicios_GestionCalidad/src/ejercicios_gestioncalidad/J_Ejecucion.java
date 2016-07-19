@@ -2,7 +2,7 @@ package ejercicios_gestioncalidad;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class Ejecucion {
+public class J_Ejecucion {
     Scanner entrada = new Scanner (System.in);
     String valor_entrada;
     
@@ -115,7 +115,7 @@ public class Ejecucion {
         }
     }
     public static void main(String[] args) throws IOException {
-        Ejecucion ejecucion = new Ejecucion();
+        J_Ejecucion ejecucion = new J_Ejecucion();
         ejecucion.entrada_opcion();
     }
 }

@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
  *
  * @author Johanna Lazaro
  */
-public class Descuentos {
+public class J_Descuentos {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);

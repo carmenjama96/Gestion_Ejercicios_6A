@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
  *
  * @author Johanna lazaro
  */
-public class NumeroPerfecto {
+public class J_NumeroPerfecto {
 
     public static void main(String[] args) {
         int i,j, suma = 0, n;

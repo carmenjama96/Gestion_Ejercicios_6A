@@ -12,23 +12,37 @@ import java.util.regex.Pattern;
  *
  * @author Johanna lazaro
  */
-public class Minutos {
+public class J_SumarPares {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int stado;
-        int num, dias, hor, min;
+        int i, sump = 0, sumi = 0;
+        String cad = "", sal = "";
 
         do {
-            System.out.println("Ingrese los minutos, ¡Sólo números!");
+            System.out.println("Ingrese un numero Mayor a 20");
             String valor = sc.nextLine();
+
             stado = validar(valor);
             if (stado == 0) {
-                num = Integer.parseInt(valor);
-                dias = num / 1440;
-                hor = num / 60;
-                min = (num - (60 * hor));
-                System.out.println(dias + " dias " + hor + " h " + min + " m");
+
+                int num = Integer.parseInt(valor);
+                if (num >= 20) {
+                    for (i = 20; i < num; i++) {
+                        if (i % 2 == 0) {
+                            cad = cad + " " + (i);
+
+                            sump = sump + i;
+                        }
+
+                    }
+                    System.out.println("Pares\n" + cad);
+
+                    System.out.println("Suma Pares " + sump);
+                } else {
+                    stado = 1;
+                }
             }
         } while (stado != 0);
 
@@ -41,9 +55,8 @@ public class Minutos {
         if (mat.matches()) {
             return 0;
         } else {
-           return 1;
+            return 1;
 
         }
-
     }
 }

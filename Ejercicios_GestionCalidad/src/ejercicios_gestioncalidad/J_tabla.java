@@ -12,34 +12,36 @@ import java.util.regex.Pattern;
  *
  * @author Johanna lazaro
  */
-public class Formula {
+public class J_tabla {
 
     public static void main(String[] args) {
+
         Scanner sc = new Scanner(System.in);
-        int stado, cantidad;
+        int stado;
         do {
-            System.out.println("Ingrese valor  XD");
-            double total = 0;
+            System.out.println("Ingrese Un numero");
+
             String valor = sc.nextLine();
             stado = validar(valor);
             if (stado == 0) {
-                String cade = "S=(";
                 int num = Integer.parseInt(valor);
-                for (int i = 1; i < num; i++) {
-                    cade = cade + i + "/" + i * 2 + "+";
-                    total = total + (i / i * 2);
+
+                System.out.println("**************************************************");
+
+                for (int i = 0; i <= num; i++) {
+                    System.out.println("*    \t" + i + "        \t" + Math.pow(i, 2) + "     \t" + Math.pow(i, 3) + "  \t *");
+
                 }
-                cade = cade + ")";
 
-                System.out.println(cade);
-                System.out.println(total);
+                System.out.println("**************************************************");
+
             }
-
         } while (stado != 0);
 
     }
 
     private static int validar(String valor) {
+
         Pattern path = Pattern.compile("[0-9]{1,10}");
         Matcher mat = path.matcher(valor);
         if (mat.matches()) {
@@ -48,6 +50,5 @@ public class Formula {
             return 1;
 
         }
-
     }
 }
