@@ -9,6 +9,8 @@ package ejercicios_gestioncalidad;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.math.BigDecimal;
+import java.math.BigInteger;
 
 /**
  *
@@ -19,8 +21,8 @@ public class ejercicio44 {
     static Validaciones validaciones = new Validaciones();
     public static void inicioEjercicio44() throws IOException {
         String verificador;
-        int limite, sumaFactorial = 0, factorial;
-        System.out.println("Solucion a: S= 1! +2! + 3! +...+ N!");
+        int limite; 
+              BigDecimal  sumaFactorial = new BigDecimal(0), factorial;
         do{
             System.out.println("ingrese el límite a calcular en entero positivo");
             verificador = entrada.readLine();
@@ -30,12 +32,13 @@ public class ejercicio44 {
         
         for (int i = 0; i < limite; i++) {
             int iteracion =i+1;
-            factorial = 1;
+            factorial = BigDecimal.valueOf(1);
                 for (int j = 1; j<= iteracion; j++) 
                 {
-                    factorial*=j;
+                    BigDecimal iteracionFactoreo = BigDecimal.valueOf(j);
+                    factorial= factorial.multiply(iteracionFactoreo);
                 }
-            sumaFactorial = sumaFactorial+factorial;
+            sumaFactorial = sumaFactorial.add(factorial);
         }
         System.out.println("la suma factorial es "+sumaFactorial);
         
