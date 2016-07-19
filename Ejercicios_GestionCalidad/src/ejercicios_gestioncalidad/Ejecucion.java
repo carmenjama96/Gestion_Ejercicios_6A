@@ -1,11 +1,12 @@
 package ejercicios_gestioncalidad;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Ejecucion {
     Scanner entrada = new Scanner (System.in);
     String valor_entrada;
     
-    public void entrada_opcion(){
+    public void entrada_opcion() throws IOException{
     System.out.println ("--------------------------------------------------------------------------------\n"
             +"            Autores: Guerrero Keter, Jama Carmen, Lazaro Johanna.\n"
             +"                              MENU PRINCIPAL\n"
@@ -41,8 +42,10 @@ public class Ejecucion {
         evaluar_opcion(valor_entrada);
     }
     
-    public void evaluar_opcion(String opcion){
+    public void evaluar_opcion(String opcion) throws IOException{
         switch (opcion) {
+            case "1":
+                ejercicio2.inicioEjercicio2();
             case "2":
                 A_AreaPerimetroTriganguloRectangulo ejercicio_2= new A_AreaPerimetroTriganguloRectangulo();
                 ejercicio_2.entrada_datos();
@@ -55,26 +58,40 @@ public class Ejecucion {
                 A_PagoCirculacionVehiculo ejercicio_5= new A_PagoCirculacionVehiculo();
                 ejercicio_5.ingreso_datos();
                 break;
+            case "7":
+                ejercicio14.inicioEejercicio14();
+                break;
             case "8":
                 A_TipoNumero ejercicio_8= new A_TipoNumero();
                 ejercicio_8.ingreso_datos();
                 break;
+            case "10":
+                ejercicio20.inicioEjercicio20();
+                break;    
             case "11":
                 A_DepreciacionVehiculo ejercicio_11= new A_DepreciacionVehiculo();
                 ejercicio_11.ingreso_datos();
                 break;
+            case "13":
+                ejercicio26.inicioEjercicio26();
             case "14":
                 A_TrianguloNFilas ejercicio_14= new A_TrianguloNFilas();
                 ejercicio_14.ingreso_datos();
                 break;
+            case "16":
+                ejercicio32.inicioEjercicio32();    
             case "17":
                 A_NumeroPrimo_NoPrimo ejercicio_17= new A_NumeroPrimo_NoPrimo();
                 ejercicio_17.ingreso_datos();
                 break;
+            case "19":
+                ejercicio38.inicioEjercicio38();     
             case "20":
                 A_Formula_1 ejercicio_20= new A_Formula_1();
                 ejercicio_20.ingreso_datos();
                 break;
+            case "22":
+                ejercicio44.inicioEjercicio44();
             case "23":
                 A_NumeroPerfecto_oNo ejercicio_23= new A_NumeroPerfecto_oNo();
                 ejercicio_23.ingreso_datos();
@@ -83,6 +100,8 @@ public class Ejecucion {
                 A_5Primeros_Numeros_Perfectos ejercicio_24= new A_5Primeros_Numeros_Perfectos();
                 ejercicio_24.ingreso_datos();
                 break;
+            case "25":
+                ejercicio50.inicioEjercicio50();    
             default:
                 System.out.print("Opcion no valida, ¿Desea intentarlo de nuevo? (SI/NO): ");
                 valor_entrada =entrada.next();
@@ -95,7 +114,7 @@ public class Ejecucion {
                 }
         }
     }
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Ejecucion ejecucion = new Ejecucion();
         ejecucion.entrada_opcion();
     }
