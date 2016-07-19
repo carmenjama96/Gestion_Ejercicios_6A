@@ -50,6 +50,10 @@ public class J_Ejecucion {
                 A_AreaPerimetroTriganguloRectangulo ejercicio_2= new A_AreaPerimetroTriganguloRectangulo();
                 ejercicio_2.entrada_datos();
                 break;
+            case "3":
+                J_Minutos ejercicio_3= new J_Minutos();
+                ejercicio_3.minutos();
+                break;            
             case "4":
                 A_Calculo_Datos_Viaje ejercicio_4= new A_Calculo_Datos_Viaje();
                 ejercicio_4.ingreso_datos();
@@ -58,6 +62,10 @@ public class J_Ejecucion {
                 A_PagoCirculacionVehiculo ejercicio_5= new A_PagoCirculacionVehiculo();
                 ejercicio_5.ingreso_datos();
                 break;
+            case "6":
+                J_Descuentos ejercicio_6= new J_Descuentos();
+                ejercicio_6.descuentos();
+                break;
             case "7":
                 ejercicio14.inicioEejercicio14();
                 break;
@@ -65,6 +73,10 @@ public class J_Ejecucion {
                 A_TipoNumero ejercicio_8= new A_TipoNumero();
                 ejercicio_8.ingreso_datos();
                 break;
+            case "9":
+                J_centigrados ejercicio_9= new J_centigrados();
+                ejercicio_9.centigrados();
+                break; 
             case "10":
                 ejercicio20.inicioEjercicio20();
                 break;    
@@ -72,11 +84,19 @@ public class J_Ejecucion {
                 A_DepreciacionVehiculo ejercicio_11= new A_DepreciacionVehiculo();
                 ejercicio_11.ingreso_datos();
                 break;
+            case "12":
+                J_tabla ejercicio_12= new J_tabla();
+                ejercicio_12.tablita();
+                break;
             case "13":
                 ejercicio26.inicioEjercicio26();
             case "14":
                 A_TrianguloNFilas ejercicio_14= new A_TrianguloNFilas();
                 ejercicio_14.ingreso_datos();
+                break;
+            case "15":
+                J_SumarPares ejercicio_15= new J_SumarPares();
+                ejercicio_15.sumapar();
                 break;
             case "16":
                 ejercicio32.inicioEjercicio32();    
@@ -84,11 +104,19 @@ public class J_Ejecucion {
                 A_NumeroPrimo_NoPrimo ejercicio_17= new A_NumeroPrimo_NoPrimo();
                 ejercicio_17.ingreso_datos();
                 break;
+            case "18":
+                J_horasTrabajadas ejercicio_18= new J_horasTrabajadas();
+                ejercicio_18.horastra();
+                break;
             case "19":
                 ejercicio38.inicioEjercicio38();     
             case "20":
                 A_Formula_1 ejercicio_20= new A_Formula_1();
                 ejercicio_20.ingreso_datos();
+                break;
+            case "21":
+                J_Formula ejercicio_21= new J_Formula();
+                ejercicio_21.formula();
                 break;
             case "22":
                 ejercicio44.inicioEjercicio44();

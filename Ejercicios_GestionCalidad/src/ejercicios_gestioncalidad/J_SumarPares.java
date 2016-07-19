@@ -1,4 +1,6 @@
+package ejercicios_gestioncalidad;
 
+import java.io.IOException;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -14,7 +16,7 @@ import java.util.regex.Pattern;
  */
 public class J_SumarPares {
 
-    public static void sumapar(String[] args) {
+    public void sumapar() throws IOException{
         Scanner sc = new Scanner(System.in);
         int stado;
         int i, sump = 0, sumi = 0;
