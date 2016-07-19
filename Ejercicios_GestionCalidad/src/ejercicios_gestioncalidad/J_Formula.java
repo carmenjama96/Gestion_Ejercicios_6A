@@ -14,7 +14,7 @@ import java.util.regex.Pattern;
  */
 public class J_Formula {
 
-    public static void main(String[] args) {
+    public static void formula() {
         Scanner sc = new Scanner(System.in);
         int stado, cantidad;
         do {

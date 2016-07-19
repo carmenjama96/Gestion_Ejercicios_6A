@@ -14,7 +14,7 @@ import java.util.regex.Pattern;
  */
 public class J_tabla {
 
-    public static void main(String[] args) {
+    public static void tablita() {
 
         Scanner sc = new Scanner(System.in);
         int stado;

@@ -14,7 +14,7 @@ import java.util.regex.Pattern;
  */
 public class J_horasTrabajadas {
 
-    public static void main(String[] args) {
+    public static void horastra() {
         String horas;
         String tarifa;
         int horasextra;

@@ -16,7 +16,7 @@ import java.util.regex.Pattern;
  */
 public class J_centigrados {
 
-    public static void main(String[] args) throws IOException {
+    public static void centigrados() throws IOException {
         BufferedReader in;
         in = new BufferedReader(new InputStreamReader(System.in));
         double n, f, c;

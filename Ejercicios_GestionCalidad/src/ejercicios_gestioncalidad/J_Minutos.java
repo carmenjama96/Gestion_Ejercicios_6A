@@ -14,7 +14,7 @@ import java.util.regex.Pattern;
  */
 public class J_Minutos {
 
-    public static void main(String[] args) {
+    public static void minutos() {
         Scanner sc = new Scanner(System.in);
         int stado;
         int num, dias, hor, min;

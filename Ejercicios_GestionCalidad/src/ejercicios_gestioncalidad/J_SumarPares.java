@@ -14,7 +14,7 @@ import java.util.regex.Pattern;
  */
 public class J_SumarPares {
 
-    public static void main(String[] args) {
+    public static void sumapar(String[] args) {
         Scanner sc = new Scanner(System.in);
         int stado;
         int i, sump = 0, sumi = 0;
