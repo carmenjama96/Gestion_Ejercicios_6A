@@ -1,6 +1,7 @@
 
 package ejercicios_gestioncalidad;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Validaciones {
@@ -19,7 +20,7 @@ public class Validaciones {
         }
     }
     
-    public void regresar_inicio(){
+    public void regresar_inicio() throws IOException{
         System.out.print("\n¿Desea revisar otro ejercicio (SI/NO): ");
         valor_entrada =entrada.next();
         if(valor_entrada.equals("SI")||valor_entrada.equals("si")||valor_entrada.equals("Si")){
