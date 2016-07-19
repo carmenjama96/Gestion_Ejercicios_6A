@@ -1,6 +1,7 @@
 
 package ejercicios_gestioncalidad;
 
+import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.Scanner;
 
@@ -24,7 +25,7 @@ public class A_DepreciacionVehiculo {
     double valor_inicial, depreciacion_anual, sumatoria, depreciacion_calculo;
     int fecha, tiempo;
     
-    public void ingreso_datos(){
+    public void ingreso_datos() throws IOException{
         System.out.println ("--------------------------------------------------------------------------------\n"
                 +"--------------------------------------------------------------------------------\n"
                 +"                           Depresiacion de vehiculo.");
@@ -88,7 +89,7 @@ public class A_DepreciacionVehiculo {
         validar_ingresos(valor_entrada, tipo);
     }
     
-    public void calcular_depreciacion(){
+    public void calcular_depreciacion() throws IOException{
         calculo_sumatoria();
         //Mostramos los datos inciales
         System.out.print ("Respuesta:\n"

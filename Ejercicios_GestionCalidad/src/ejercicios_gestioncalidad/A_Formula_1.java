@@ -1,6 +1,7 @@
 
 package ejercicios_gestioncalidad;
 
+import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.Scanner;
 
@@ -17,7 +18,7 @@ public class A_Formula_1 {
     long suma;
     int valor_A, valor_N;
     
-    public void ingreso_datos(){
+    public void ingreso_datos() throws IOException{
         System.out.println ("--------------------------------------------------------------------------------\n"
                 +"--------------------------------------------------------------------------------\n"
                 +"            Solucion a: S= (A-1)^1 + (A-2)^2 + (A-3)^3 +...(A-N)^N.");
@@ -56,7 +57,7 @@ public class A_Formula_1 {
         }
     }
     
-    public void calcular_formula(){
+    public void calcular_formula() throws IOException{
         for(long i=1; i<=valor_N; i++){
             valor_A=valor_A-1;
             Double temporal=Math.pow(valor_A,i);

@@ -1,5 +1,6 @@
 package ejercicios_gestioncalidad;
 
+import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.Scanner;
 
@@ -18,7 +19,7 @@ public class A_PagoCirculacionVehiculo {
     DecimalFormat decimales = new DecimalFormat("0.00"); //Nos permite mostrar por pantalla numeros con el formato dados
     
     double valor_pagar, fijo_bicicleta=0.50, moto_carro=0.30, fijo_camion_km=0.50, fijo_camion_tonelada=0.10;
-    public void ingreso_datos(){
+    public void ingreso_datos() throws IOException{
         System.out.println ("--------------------------------------------------------------------------------\n"
                 +"--------------------------------------------------------------------------------\n"
                 +"             Calculo de circulacion de vehiculos. Elija un opcion.\n"
@@ -28,7 +29,7 @@ public class A_PagoCirculacionVehiculo {
         evaluar_opcion(valor_entrada);
     }
     
-    public void evaluar_opcion(String opcion){
+    public void evaluar_opcion(String opcion) throws IOException{
         switch (opcion) {
             case "1"://Bicicletas
                 valor_pagar=fijo_bicicleta;
@@ -56,14 +57,14 @@ public class A_PagoCirculacionVehiculo {
         }
     }
     
-    public void mostrar_resultados(double valor){
+    public void mostrar_resultados(double valor) throws IOException{
         //Mostramos resultados y preguntamos si se quiere volver al menu inicio
         System.out.print("Respuesta:\nEl valor a pagar es: "+decimales.format(valor)
         +"\n--------------------------------------------------------------------------------\n");
         validaciones.regresar_inicio();
     }
     
-    public void calculo_moto_carro(){
+    public void calculo_moto_carro() throws IOException{
         //Pedimos los kilometros recorridos y validamos llamando al metodo externo
         System.out.print("Ingrese los kilometros recorridos: ");
         valor_entrada =entrada.next();
@@ -77,7 +78,7 @@ public class A_PagoCirculacionVehiculo {
         }
     }
     
-    public void calculo_camiones(){
+    public void calculo_camiones() throws IOException{
         Double kilometros, peso;
         System.out.print("Ingrese los kilometros recorridos: ");
         valor_entrada =entrada.next();

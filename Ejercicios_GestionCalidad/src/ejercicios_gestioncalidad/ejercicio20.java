@@ -104,45 +104,6 @@ public class ejercicio20 {
                     }
             }
     
-   /* int dinero[]= new int [5]; 
-    int i=0; 
-    while(cant>0){ 
-        while(cant-100>=0){ 
-            cant=cant-100; 
-            dinero[0]++; 
-        } 
-        while(cant-20>=0){ 
-            cant=cant-20; 
-            dinero[1]++; 
-        } 
-        while(cant-10>=0){ 
-            cant=cant-10; 
-            dinero[2]++; 
-        } 
-        while(cant-5>=0){ 
-            cant=cant-5; 
-            dinero[3]++; 
-        } 
-        while(cant-1>=0){ 
-            cant=cant-1; 
-            dinero[4]++; 
-        } 
-         
-    } 
-        for(i=0;i<5;i++){ 
-            if(i==0) 
-                System.out.println(dinero[i]+ " billetes de 100"); 
-                if(i==1) 
-                    System.out.println(dinero[i]+ " billetes de 20"); 
-                if(i==2) 
-                    System.out.println(dinero[i]+ " billetes de 10"); 
-                if(i==3) 
-                    System.out.println(dinero[i]+ " billetes de 5"); 
-                if(i==4) 
-                    System.out.println(dinero[i]+ " billetes de 1"); 
-
-        }
-    */
         validaciones.regresar_inicio();
     }
 }

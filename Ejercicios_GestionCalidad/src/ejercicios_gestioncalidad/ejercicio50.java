@@ -6,13 +6,15 @@
 
 package ejercicios_gestioncalidad;
 
+import java.io.IOException;
+
 /**
  *
  * @author Usuario
  */
 public class ejercicio50 {
     static Validaciones validaciones = new Validaciones();
-      public static void inicioEjercicio50() {
+      public static void inicioEjercicio50() throws IOException {
         System.out.println("mostrar los terminos para la siguiente serie 2; 5; 7; 10; 12; 15; 17; : : : ; 1800");
         int serie =0, limite = 1800, inicio = 2;
         do{

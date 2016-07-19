@@ -1,6 +1,7 @@
 
 package ejercicios_gestioncalidad;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 /**
@@ -13,7 +14,7 @@ public class A_NumeroPerfecto_oNo {
     Scanner entrada = new Scanner (System.in);
     String valor_entrada;
     Validaciones validaciones = new Validaciones();
-    public void ingreso_datos (){
+    public void ingreso_datos () throws IOException{
         System.out.println ("\n--------------------------------------------------------------------------------\n"
                            +"--------------------------------------------------------------------------------\n\n"
                            +"                         ¿Numero perfecto o no?");
@@ -22,7 +23,7 @@ public class A_NumeroPerfecto_oNo {
         validar_entrada(valor_entrada);
     }
     
-    public void validar_entrada(String valor){
+    public void validar_entrada(String valor) throws IOException{
         if(validaciones.validar_numeros_enteros_positivos(valor)==true){
             if(validaciones.longitud_string(valor)==false){
                 if(validaciones.validar_numero_perfecto(Long.parseLong(valor))==true){
@@ -40,7 +41,7 @@ public class A_NumeroPerfecto_oNo {
         }
     }
     
-    public void error_mensaje(String mensaje){
+    public void error_mensaje(String mensaje) throws IOException{
         System.out.print (mensaje);
         System.out.print("Ingrese numero a validar: ");
         valor_entrada=entrada.nextLine().replaceAll("\\s", "");

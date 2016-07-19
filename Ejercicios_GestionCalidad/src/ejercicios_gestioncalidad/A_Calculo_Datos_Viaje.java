@@ -1,5 +1,6 @@
 package ejercicios_gestioncalidad;
 
+import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.Scanner;
 /*Ejercicio 8: Diseñar un programa que ingrese el total de kilómetros recorridos, el precio de la gasolina (por litro), 
@@ -19,7 +20,7 @@ public class A_Calculo_Datos_Viaje {
             gasolina_dolares_100km=0, gasolina_litros_km=0, gasolina_dolares_km=0, vel_media_km_h=0, vel_media_m_s=0;
     int horas, minutos;
         
-    public void ingreso_datos(){
+    public void ingreso_datos() throws IOException{
         System.out.println ("\n--------------------------------------------------------------------------------\n"
                            +"--------------------------------------------------------------------------------\n\n"
                            +"Calculo de gasto de gasolina y velocidad media de un viaje. Por favor, responda.");
@@ -128,7 +129,7 @@ public class A_Calculo_Datos_Viaje {
         }
     }
     
-    public void calcular_datos(){
+    public void calcular_datos() throws IOException{
         //Para calcular lo litros por kilometro dividimos la gasolina consumida por el precio de gasolina
         //como el precio representa a 1 litro, esto nos daria el total de litros consumidos.
         //Como lo que nos piden es los litros por kilometro lo dividimos por el total de km recorrridos.

@@ -1,6 +1,7 @@
 
 package ejercicios_gestioncalidad;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 /**
@@ -17,7 +18,7 @@ public class A_TrianguloNFilas {
     
     String [] cadena;
     
-    public void ingreso_datos(){
+    public void ingreso_datos() throws IOException{
         System.out.println ("\n--------------------------------------------------------------------------------\n"
                            +"--------------------------------------------------------------------------------\n\n"
                            +"                         Piramides N filas --> *");
@@ -39,7 +40,7 @@ public class A_TrianguloNFilas {
         }
     }
     
-    public void generar_triangulo(int valor){
+    public void generar_triangulo(int valor) throws IOException{
         crear_arreglo(valor);//Se crea un array con el tamaño ingresado
         System.out.print ("Respuesta:\n\n");
         //El siguiente ciclo repetitivo incia en cero, aumenta de 1 en 1 y termina cuando llegue a el tamaño del array

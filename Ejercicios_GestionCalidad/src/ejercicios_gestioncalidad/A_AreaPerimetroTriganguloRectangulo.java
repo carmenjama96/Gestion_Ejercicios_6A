@@ -1,5 +1,6 @@
 package ejercicios_gestioncalidad;
 
+import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.Scanner;
 
@@ -15,7 +16,7 @@ public class A_AreaPerimetroTriganguloRectangulo {
     Validaciones validaciones = new Validaciones();
     
     //Ingreso de datos
-    public void entrada_datos (){
+    public void entrada_datos () throws IOException{
         System.out.println ("\n--------------------------------------------------------------------------------\n"
                            +"--------------------------------------------------------------------------------\n\n"
                            +"                 Area y perimetro de un triangulo rectangulo");
@@ -50,7 +51,7 @@ public class A_AreaPerimetroTriganguloRectangulo {
         }
     }
     
-    public void calcular_area_perimetro(){
+    public void calcular_area_perimetro() throws IOException{
         //Procedemos a calcular la hipotenusa, y luego los otros datos solicitados: area y perimetro
         hipotenusa=Math.sqrt(Math.pow(altura, 2) + Math.pow(base, 2));
         area=(altura*base)/2;
