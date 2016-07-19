@@ -72,7 +72,7 @@ public class A_Calculo_Datos_Viaje {
                 if(tipo.equals("horas")&& (var_tiempo>=0)){
                     horas=Integer.parseInt(valor);
                 }else{
-                    if((var_tiempo>0) && (var_tiempo<=60)){
+                    if((var_tiempo>=0) && (var_tiempo<=60)){
                         minutos=Integer.parseInt(valor);
                     }else{
                         mensaje_error(tipo, "--Error en dato, los minutos deben de estar en el rango de [0-60]\n");
