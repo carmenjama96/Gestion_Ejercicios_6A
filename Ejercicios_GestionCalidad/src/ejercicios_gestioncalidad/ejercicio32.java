@@ -32,7 +32,7 @@ public class ejercicio32 {
         for (int i = 0; i < limite; i++) {
             if ((i+1)%5 == 0) {
                 System.out.println((i+1)+" es multiplo de 5");
-            }else{System.out.println("");}
+            }
         }
         validaciones.regresar_inicio();
     }
