@@ -1,6 +1,7 @@
 
 package ejercicios_gestioncalidad;
 
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.util.Scanner;
@@ -12,9 +13,9 @@ public class A_TipoNumero {
     Scanner entrada = new Scanner (System.in); //Creación de un objeto Scanner
     Validaciones validaciones = new Validaciones();
     DecimalFormat decimales = new DecimalFormat("0.00"); //Nos permite mostrar por pantalla numeros con el formato dado
+    BigDecimal numero;
     
-    
-    public void ingreso_datos(){
+    public void ingreso_datos()throws IOException{
         System.out.println ("\n--------------------------------------------------------------------------------\n"
                            +"--------------------------------------------------------------------------------\n\n"
                            +"           ¿Numero entero, decimal, par, impar, positivo, negativo?.");
@@ -22,7 +23,7 @@ public class A_TipoNumero {
         System.out.print("Ingrese numero a validar: ");
         valor_entrada=entrada.nextLine().replaceAll("\\s", "");
         solo_numeros(valor_entrada);
-        tipo_numero(valor_entrada);
+        tipo_numero();
     }
     public void solo_numeros(String valor){
         //Validamos que se ingrese un numero, si no esta correcto no pedira ingresarlo de nuevo
@@ -31,40 +32,36 @@ public class A_TipoNumero {
             System.out.print("\nIngrese numero a validar: ");
             valor_entrada=entrada.nextLine().replaceAll("\\s", "");
             solo_numeros(valor_entrada);
+        }else{
+            numero= new BigDecimal(valor);
         }
     }
-    
-    public void tipo_numero(String valor){
-        //Aqui al transformarlos de string a double, lo redondea
-        BigDecimal var_valor = new BigDecimal(valor);
-        //Creamos un String que contendra la respuesta y segun las validaciones siguientes se mostrara el tipo de numero que es
-        /*if(var_valor.){
-            System.out.print("ENTERO");
-        }else{
-            System.out.print("DECIMAL");
-        }
-        /*if(var_valor%1==0){//Si el residuo del valor dividido para 1 es 0, es entero
-            mostrar=mostrar+"entero";
-            if ((var_valor % 2)==0){//Aqui se comprueba si es par o impar
-                mostrar=mostrar+", par";
-            }else{
-                mostrar=mostrar+", impar";
-            }
-        }else{
-            mostrar=mostrar+"decimal, no es considerado par o impar";
-        }
+    public void tipo_numero() throws IOException{
+        String mostrar = "Respuesta: \n";
+        BigDecimal residuo;
+        double valor;
         
-        if(var_valor>0){//Y por ultimo si es negativo o positivo
-            mostrar=mostrar+" y positivo";
+        residuo = numero.remainder(new BigDecimal(1));
+        valor = residuo.doubleValue();
+        if(valor>0 || valor<0){
+            mostrar=mostrar+"El numero es decimal";
         }else{
-            mostrar=mostrar+" y negativo";
+            mostrar=mostrar+"El numero es entero";
         }
-        
-        if(valor.equals(var_valor)==false){
-            mostrar=mostrar+". Con valor redondeado a ->"+decimales.format(var_valor);
+        residuo = numero.remainder(new BigDecimal(2));
+        valor = residuo.doubleValue();
+        if (valor>0 || valor<0){
+            mostrar=mostrar+", impar";
+        }else{
+            mostrar=mostrar+", par";
         }
-        System.out.print(mostrar
-        +"\n--------------------------------------------------------------------------------\n");
-        validaciones.regresar_inicio();*/
+        if (numero.compareTo(BigDecimal.ZERO) > 0){
+            mostrar=mostrar+" y positivo.";
+        }else{
+            mostrar=mostrar+" y negativo.";
+        }
+        System.out.print (mostrar);
+        System.out.print ("\n--------------------------------------------------------------------------------\n");
+        validaciones.regresar_inicio();
     }
 }
