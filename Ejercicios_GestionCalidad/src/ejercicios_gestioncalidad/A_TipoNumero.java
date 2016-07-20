@@ -44,22 +44,27 @@ public class A_TipoNumero {
         residuo = numero.remainder(new BigDecimal(1));
         valor = residuo.doubleValue();
         if(valor>0 || valor<0){
-            mostrar=mostrar+"El numero es decimal";
+            mostrar=mostrar+"El numero es decimal, no es considerado par o impar ";
         }else{
             mostrar=mostrar+"El numero es entero";
-        }
-        residuo = numero.remainder(new BigDecimal(2));
-        valor = residuo.doubleValue();
-        if (valor>0 || valor<0){
-            mostrar=mostrar+", impar";
-        }else{
-            mostrar=mostrar+", par";
+            residuo = numero.remainder(new BigDecimal(2));
+            valor = residuo.doubleValue();
+            if (valor>0 || valor<0){
+                mostrar=mostrar+", impar";
+            }else{
+                mostrar=mostrar+", par";
+            }
         }
         if (numero.compareTo(BigDecimal.ZERO) > 0){
             mostrar=mostrar+" y positivo.";
         }else{
-            mostrar=mostrar+" y negativo.";
+            if(numero.compareTo(BigDecimal.ZERO) < 0){
+                mostrar=mostrar+" y negativo.";
+            }else{
+                mostrar=mostrar+", no es negativo ni positivo";
+            }
         }
+        
         System.out.print (mostrar);
         System.out.print ("\n--------------------------------------------------------------------------------\n");
         validaciones.regresar_inicio();

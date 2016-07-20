@@ -94,7 +94,7 @@ public class A_PagoCirculacionVehiculo {
         }
         //Una ves que los datos ingresados sean correctos guardamos y pasamos a ingresar el peso que tambien sera validado
         kilometros=Double.parseDouble(valor_entrada);
-        System.out.print("Ingrese el peso/Toneladas metricas:: ");
+        System.out.print("Ingrese el peso/Toneladas metricas: ");
         valor_entrada =entrada.next();
         while(validaciones.validar_solo_numeros_positivos(valor_entrada)==false){
             System.out.print ("--Error en dato, intentelo de nuevo\n");

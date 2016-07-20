@@ -22,7 +22,7 @@ public class A_DepreciacionVehiculo {
     Validaciones validaciones = new Validaciones();
     DecimalFormat decimales = new DecimalFormat("0.00"); //Nos permite mostrar por pantalla numeros con el formato dado
     
-    double valor_inicial, depreciacion_anual, sumatoria, depreciacion_calculo;
+    double valor_inicial, sumatoria, depreciacion_calculo;
     int fecha, tiempo;
     
     public void ingreso_datos() throws IOException{
@@ -33,7 +33,7 @@ public class A_DepreciacionVehiculo {
         System.out.print("Ingrese año de compra: ");
         valor_entrada=entrada.nextLine().replaceAll("\\s", "");
         validar_ingresos(valor_entrada, "fecha");
-        System.out.print("Ingrese valor de vehiculo: ");
+        System.out.print("Ingrese valor de vehiculo $");
         valor_entrada=entrada.nextLine().replaceAll("\\s", "");
         validar_ingresos(valor_entrada, "valor");
         System.out.print("¿Para cuantos años desea calcular la depreciacion?: ");
@@ -100,7 +100,7 @@ public class A_DepreciacionVehiculo {
                                                                   // por cada una de las fracciones formadas, al dividir el numero de depreciaciones a calcular por lla sumatoria de los digitos.
             System.out.print ("   "+fecha+"   ||     "+decimales.format(depreciacion_calculo)+"\n");//Mostramos por pantalla
             tiempo=tiempo-1;//Se disminuye el tiempo, o el numero de veces que se va a calcular la depreciacion
-        }while(tiempo<0 || depreciacion_calculo==0); //Este ciclo se repite hasta 
+        }while(tiempo>0); //Este ciclo se repite hasta 
         System.out.print ("--------------------------------------------------------------------------------\n");
         validaciones.regresar_inicio();
     }
