@@ -47,12 +47,16 @@ public class A_PagoCirculacionVehiculo {
             default://Si no se ingresa la opcion correcta nos pregunta si deseamos intentarlo de nuevo y vuelve a validar la opcion
                 System.out.print("Opcion no valida, ¿Desea intentarlo de nuevo? (SI/NO): ");
                 valor_entrada =entrada.next();
-                if(valor_entrada.equals("SI")||valor_entrada.equals("si")||valor_entrada.equals("Si")){
-                    System.out.print("Tipo vehiculo: ");
-                    valor_entrada =entrada.next();
-                    evaluar_opcion(valor_entrada);
-                }else{//Si no queremos ingresar de nuevo el valor, nos pregunta si volvemos al menod e inicio o no
-                    validaciones.regresar_inicio();
+                if(valor_entrada.equals("SI")||valor_entrada.equals("si")||valor_entrada.equals("Si")||valor_entrada.equals("NO")||valor_entrada.equals("no")||valor_entrada.equals("NO")){
+                    if(valor_entrada.equals("SI")||valor_entrada.equals("si")||valor_entrada.equals("Si")){
+                        System.out.print("Tipo vehiculo: ");
+                        valor_entrada =entrada.next(); 
+                        evaluar_opcion(valor_entrada);
+                    }else{
+                        validaciones.regresar_inicio();
+                    }
+                }else{
+                    evaluar_opcion("lll");
                 }
         }
     }
