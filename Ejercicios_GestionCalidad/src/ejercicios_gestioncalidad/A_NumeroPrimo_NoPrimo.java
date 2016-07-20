@@ -33,7 +33,7 @@ public class A_NumeroPrimo_NoPrimo {
                 mensaje_error();
             }
         }else{
-            System.out.print ("--Error en dato, debe de estar en el rango de [0-999999999999999999]\n");
+            System.out.print ("--Error en dato, debe de estar en el rango de [0-999999999999999999] y ser entero\n");
             mensaje_error();
         }
     }
@@ -50,7 +50,7 @@ public class A_NumeroPrimo_NoPrimo {
         }else{
             System.out.print ("Respuesta: El numero "+decimales.format(valor)+" NO es primo \n");
         }
-        System.out.print("   Nota: Un número primo sólo se puede dividir exactamente por sí mismo y por 1."
+        System.out.print("   Nota: Un número primo, es un entero que es exactamente por sí mismo y por 1."
                 + "\n--------------------------------------------------------------------------------\n");
         validaciones.regresar_inicio();
     }
