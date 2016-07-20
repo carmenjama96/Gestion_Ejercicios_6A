@@ -30,7 +30,7 @@ public class ejercicio26 {
         do {
             System.out.println("Cuantos elementos desea ingresar");
             verificador = entrada.readLine();
-        } while (!validaciones.validar_numeros_enteros_positivos(verificador));
+        } while (!validaciones.validar_solo_numeros_positivosY0(verificador));
           opcionUsuario =Integer.parseInt(verificador.toString());
           
           double numeros []= new double[opcionUsuario];
@@ -39,7 +39,7 @@ public class ejercicio26 {
             do {
                 System.out.println("ingrese "+ (i+1) +" número");
                 verificador = entrada.readLine();
-            } while (!validaciones.validar_solo_numeros_positivos(verificador));
+            } while (!validaciones.validar_solo_numeros_positivosY0(verificador));
             
             numeros[i]= Double.parseDouble(verificador.toString());
         }

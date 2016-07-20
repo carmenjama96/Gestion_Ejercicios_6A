@@ -49,6 +49,23 @@ public class Validaciones {
         }
     }
     
+    public boolean validar_solo_numeros_positivosY0(String datos){
+        if(datos.length()==0){
+            return false;
+        }else{
+            if(validar_solo_numeros(datos)==true){
+                Double numero =Double.parseDouble(datos);
+                if(numero>0||numero==0){
+                    return true;
+                }else{
+                    return false;
+                }
+            }else{
+                return false;
+            }
+        }
+    }
+    
     public boolean validar_modena(String datos){
         if(datos.matches("^[0-9]{1,3}([0-9]{3})*[\\\\.][0-9]{1,2}$")){
             return validar_solo_numeros_positivos(datos);

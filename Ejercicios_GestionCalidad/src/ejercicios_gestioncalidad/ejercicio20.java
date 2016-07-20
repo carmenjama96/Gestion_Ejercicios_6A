@@ -19,7 +19,7 @@ public class ejercicio20 {
     static Validaciones validaciones = new Validaciones();
     
     public static void inicioEjercicio20() throws IOException {
-        int billetes1, billetes5, billetes10, billetes20, billetes100, cant, precioArticulo, vuelto =0, dineroFalta=0,sumaBilletes;
+        int billetes1, billetes5, billetes10, billetes20, billetes100, precioArticulo, vuelto =0, dineroFalta=0,sumaBilletes;
         String verificador;
         
         System.out.println("Cálculo de una venta");
@@ -81,15 +81,15 @@ public class ejercicio20 {
         sumaBilletes= billetes1 + billetes5 + billetes10 + billetes20 + billetes100;
         
         if (precioArticulo == sumaBilletes) {
-            cant = precioArticulo;
+            
         } else
             { 
                 if (precioArticulo< sumaBilletes) {
                     vuelto = sumaBilletes-precioArticulo;
-                    cant = vuelto;
+                    
                     }else{
                            dineroFalta = precioArticulo-sumaBilletes;
-                           cant = dineroFalta; 
+                            
                          }
             }
  
