@@ -15,6 +15,7 @@ import java.util.regex.Pattern;
  * @author Johanna lazaro
  */
 public class J_SumarPares {
+    static Validaciones validaciones = new Validaciones();
 
     public void sumapar() throws IOException{
         Scanner sc = new Scanner(System.in);
@@ -47,14 +48,13 @@ public class J_SumarPares {
                 }
             }
         } while (stado != 0);
+         validaciones.regresar_inicio();   
 
     }
 
-    private static int validar(String valor) {
+           private static int validar(String valor) {        
 
-        Pattern path = Pattern.compile("[0-9]{1,10}");
-        Matcher mat = path.matcher(valor);
-        if (mat.matches()) {
+        if (validaciones.validar_solo_numeros(valor)==true) {
             return 0;
         } else {
             return 1;

@@ -3,8 +3,7 @@ package ejercicios_gestioncalidad;
 import static ejercicios_gestioncalidad.ejercicio2.validaciones;
 import java.io.IOException;
 import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -21,34 +20,29 @@ public class J_tabla {
 
         Scanner sc = new Scanner(System.in);
         int stado;
-        do {
-            System.out.println("Ingrese Un numero");
+            System.out.println("Ingrese un número: ");
 
             String valor = sc.nextLine();
             stado = validar(valor);
             if (stado == 0) {
-                int num = Integer.parseInt(valor);
-
+                double num = Double.parseDouble(valor);
                 System.out.println("**************************************************");
 
-                for (int i = 0; i <= num; i++) {
-                    System.out.println("*    \t" + i + "        \t" + Math.pow(i, 2) + "     \t" + Math.pow(i, 3) + "  \t *");
-
-                }
-
-                System.out.println("**************************************************");
+                for (int  i = 0;  i <= 9; i++ ) {                       
+                 System.out.println(""+num + " + " +i + " = " + (num+i));
+                }               
 
             }
-        } while (stado != 0);
-        validaciones.regresar_inicio();
+            else {
+                tablita();
+            }
+        validaciones.regresar_inicio();       
 
     }
 
-    private static int validar(String valor) {
+    private static int validar(String valor) {        
 
-        Pattern path = Pattern.compile("[0-9]{1,10}");
-        Matcher mat = path.matcher(valor);
-        if (mat.matches()) {
+        if (validaciones.validar_solo_numeros(valor)==true) {
             return 0;
         } else {
             return 1;
