@@ -37,8 +37,12 @@ public class A_TipoNumero {
     public void tipo_numero(String valor){
         //Aqui al transformarlos de string a double, lo redondea
         BigDecimal var_valor = new BigDecimal(valor);
-        System.out.print("\nNUMERILLO "+var_valor+"\n");
         //Creamos un String que contendra la respuesta y segun las validaciones siguientes se mostrara el tipo de numero que es
+        /*if(var_valor.){
+            System.out.print("ENTERO");
+        }else{
+            System.out.print("DECIMAL");
+        }
         /*if(var_valor%1==0){//Si el residuo del valor dividido para 1 es 0, es entero
             mostrar=mostrar+"entero";
             if ((var_valor % 2)==0){//Aqui se comprueba si es par o impar

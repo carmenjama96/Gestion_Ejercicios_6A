@@ -131,12 +131,16 @@ public class J_Ejecucion {
             default:
                 System.out.print("Opcion no valida, ¿Desea intentarlo de nuevo? (SI/NO): ");
                 valor_entrada =entrada.next();
-                if(valor_entrada.equals("SI")||valor_entrada.equals("si")||valor_entrada.equals("Si")){
-                    System.out.print("Opcion: ");
-                    valor_entrada =entrada.next();
-                    evaluar_opcion(valor_entrada);
+                if(valor_entrada.equals("SI")||valor_entrada.equals("si")||valor_entrada.equals("Si")||valor_entrada.equals("NO")||valor_entrada.equals("no")||valor_entrada.equals("No")){
+                    if(valor_entrada.equals("SI")||valor_entrada.equals("si")||valor_entrada.equals("Si")){
+                        System.out.print("Opcion: ");
+                        valor_entrada =entrada.next();
+                        evaluar_opcion(valor_entrada);
+                    }else{
+                        System.exit(0);
+                    }
                 }else{
-                    System.exit(0);
+                    evaluar_opcion("xxx");
                 }
         }
     }
