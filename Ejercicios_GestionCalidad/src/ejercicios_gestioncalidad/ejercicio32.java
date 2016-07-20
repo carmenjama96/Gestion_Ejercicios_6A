@@ -25,14 +25,14 @@ public class ejercicio32 {
         do{
             System.out.println("ingrese el límite a calcular en enteros positivos");
             verificador = entrada.readLine();
-          }while(!validaciones.validar_numeros_enteros_positivos(verificador));
+          }while(!validaciones.validar_numeros_enteros_positivos(verificador)||verificador.matches("0"));
             
         limite=Integer.parseInt(verificador.toString());
         
         for (int i = 0; i < limite; i++) {
             if ((i+1)%5 == 0) {
                 System.out.println((i+1)+" es multiplo de 5");
-            }
+            }else{System.out.println("");}
         }
         validaciones.regresar_inicio();
     }
