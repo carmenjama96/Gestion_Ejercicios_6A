@@ -28,10 +28,10 @@ public class A_Calculo_Datos_Viaje {
         System.out.print("Kilometros recorridos: ");
         valor_entrada=entrada.nextLine().replaceAll("\\s", "");
         validar_datos(valor_entrada, "km"); //Se invoca al metodo que compueba si los datos ingresados son correctos
-        System.out.print("Precio gasolina por litro: ");
+        System.out.print("Precio gasolina por litro $");
         valor_entrada=entrada.nextLine().replaceAll("\\s", "");
         validar_datos(valor_entrada, "pre_gas");
-        System.out.print("Dinero gastado en gasolina: ");
+        System.out.print("Dinero gastado en gasolina $");
         valor_entrada=entrada.nextLine().replaceAll("\\s", "");
         validar_datos(valor_entrada, "dinero");
         //Ingreso del tiempo tardado

@@ -85,11 +85,6 @@ public class J_Ejecucion {
             case "12":
                 J_tabla ejercicio_12= new J_tabla();
                 ejercicio_12.tablita();
-                
-                break;
-            case "12":
-                J_tabla ejercicio_12= new J_tabla();
-                ejercicio_12.tablita();
                 break;
             case "13":
                 ejercicio26.inicioEjercicio26();
