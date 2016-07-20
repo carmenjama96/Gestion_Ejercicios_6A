@@ -26,7 +26,7 @@ public class ejercicio44 {
         do{
             System.out.println("ingrese el límite a calcular en entero positivo");
             verificador = entrada.readLine();
-          }while(!validaciones.validar_numeros_enteros_positivos(verificador));
+          }while(!validaciones.validar_numeros_enteros_positivos(verificador)||verificador.matches("0"));
         
         limite = Integer.parseInt(verificador.toString());
         
