@@ -24,15 +24,21 @@ public class A_NumeroPerfecto_oNo {
     }
     
     public void validar_entrada(String valor) throws IOException{
-        if(validaciones.validar_numeros_enteros_positivos(valor)==true){
+        if(validaciones.validar_numeros_enteros_positivos(valor)){
             if(validaciones.longitud_string(valor)==false){
-                if(validaciones.validar_numero_perfecto(Long.parseLong(valor))==true){
-                    System.out.print ("El numero "+valor+" es perfecto");
-                }else{
+                if(valor.equals("0")){
                     System.out.print ("El numero "+valor+" NO es perfecto");
+                    System.out.print ("\n--------------------------------------------------------------------------------\n");
+                    validaciones.regresar_inicio();
+                }else{
+                    if(validaciones.validar_numero_perfecto(Long.parseLong(valor))==true){
+                        System.out.print ("El numero "+valor+" es perfecto");
+                    }else{
+                        System.out.print ("El numero "+valor+" NO es perfecto");
+                    }
+                    System.out.print ("\n--------------------------------------------------------------------------------\n");
+                    validaciones.regresar_inicio();
                 }
-                System.out.print ("\n--------------------------------------------------------------------------------\n");
-                validaciones.regresar_inicio();
             }else{
                 error_mensaje("--Error en dato, debe de estar en el rango de [0-999999999]\n");
             }
