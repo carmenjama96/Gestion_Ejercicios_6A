@@ -23,12 +23,16 @@ public class Validaciones {
     public void regresar_inicio() throws IOException{
         System.out.print("\n¿Desea revisar otro ejercicio (SI/NO): ");
         valor_entrada =entrada.next();
-        if(valor_entrada.equals("SI")||valor_entrada.equals("si")||valor_entrada.equals("Si")){
-            System.out.print("\n");
-            J_Ejecucion ejecucion = new J_Ejecucion();
-            ejecucion.entrada_opcion();
+        if(valor_entrada.equals("SI")||valor_entrada.equals("si")||valor_entrada.equals("Si")||valor_entrada.equals("NO")||valor_entrada.equals("no")||valor_entrada.equals("No")){
+            if(valor_entrada.equals("SI")||valor_entrada.equals("si")||valor_entrada.equals("Si")){
+                System.out.print("\n");
+                J_Ejecucion ejecucion = new J_Ejecucion();
+                ejecucion.entrada_opcion();
+            }else{
+                System.exit(0);
+            }
         }else{
-            System.exit(0);
+            regresar_inicio();
         }
     }
     

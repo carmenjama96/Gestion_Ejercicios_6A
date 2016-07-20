@@ -103,12 +103,12 @@ public class A_Calculo_Datos_Viaje {
                 validar_datos(valor_entrada, "km");
                 break;
             case "pre_gas":
-                System.out.print("Precio gasolina por litro: ");
+                System.out.print("Precio gasolina por litro $");
                 valor_entrada=entrada.nextLine().replaceAll("\\s", "");
                 validar_datos(valor_entrada, "pre_gas");
                 break;
             case "dinero":
-                System.out.print("Dinero gastado en gasolina: ");
+                System.out.print("Dinero gastado en gasolina $");
                 valor_entrada=entrada.nextLine().replaceAll("\\s", "");
                 validar_datos(valor_entrada, "dinero");
                 break;

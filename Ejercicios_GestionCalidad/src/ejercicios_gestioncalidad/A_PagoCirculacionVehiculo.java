@@ -56,7 +56,7 @@ public class A_PagoCirculacionVehiculo {
                         validaciones.regresar_inicio();
                     }
                 }else{
-                    evaluar_opcion("lll");
+                    evaluar_opcion("xxx");
                 }
         }
     }

@@ -49,7 +49,7 @@ public class A_DepreciacionVehiculo {
                 if(validaciones.validar_modena(valor_entrada)==true){
                     valor_inicial=Double.parseDouble(valor);
                 }else{
-                    mensaje_error("Ingrese valor de vehiculo: ", tipo);
+                    mensaje_error("Ingrese valor de vehiculo $", tipo);
                 }
                 break;
             case "fecha"://Validamos que el a;o ingresado sea corecto
