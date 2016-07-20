@@ -37,6 +37,13 @@ public class A_TrianguloNFilas {
             System.out.print("Ingrese la base del triangulo: ");
             valor_entrada=entrada.nextLine().replaceAll("\\s", "");
             validar_entrada(valor_entrada);
+        }else{
+            if(Integer.parseInt(valor)<2){
+                System.out.print ("--Error en dato, debe de tener al menos una base de 2\n");
+                System.out.print("Ingrese la base del triangulo: ");
+                valor_entrada=entrada.nextLine().replaceAll("\\s", "");
+                validar_entrada(valor_entrada);
+            }
         }
     }
     
